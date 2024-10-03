@@ -130,3 +130,45 @@ CUDA_VISIBLE_DEVICES=2 python -m lm_eval --model hf-multimodal --model_args pret
 |  - Energy and Power                   |      0|none  |     0|acc   |↑  |0.4333|±  |0.0920|
 |  - Materials                          |      0|none  |     0|acc   |↑  |0.1667|±  |0.0692|
 |  - Mechanical Engineering             |      0|none  |     0|acc   |↑  |0.2333|±  |0.0785|
+
+
+LLaMA3.2-11B-Vision-Instruct, W8A8 on all Linear Layers except for lm_head and multi_modal_projector
+|                 Tasks                 |Version|Filter|n-shot|Metric|   |Value |   |Stderr|
+|---------------------------------------|------:|------|-----:|------|---|-----:|---|-----:|
+|mmmu_val                               |      0|none  |      |acc   |↑  |0.4567|±  |0.0158|
+| - Art and Design                      |      0|none  |      |acc   |↑  |0.6667|±  |0.0388|
+|  - Art                                |      0|none  |     0|acc   |↑  |0.7667|±  |0.0785|
+|  - Art Theory                         |      0|none  |     0|acc   |↑  |0.8667|±  |0.0631|
+|  - Design                             |      0|none  |     0|acc   |↑  |0.7333|±  |0.0821|
+|  - Music                              |      0|none  |     0|acc   |↑  |0.3000|±  |0.0851|
+| - Business                            |      0|none  |      |acc   |↑  |0.4067|±  |0.0407|
+|  - Accounting                         |      0|none  |     0|acc   |↑  |0.4000|±  |0.0910|
+|  - Economics                          |      0|none  |     0|acc   |↑  |0.4000|±  |0.0910|
+|  - Finance                            |      0|none  |     0|acc   |↑  |0.4333|±  |0.0920|
+|  - Manage                             |      0|none  |     0|acc   |↑  |0.4333|±  |0.0920|
+|  - Marketing                          |      0|none  |     0|acc   |↑  |0.3667|±  |0.0895|
+| - Health and Medicine                 |      0|none  |      |acc   |↑  |0.4733|±  |0.0413|
+|  - Basic Medical Science              |      0|none  |     0|acc   |↑  |0.5000|±  |0.0928|
+|  - Clinical Medicine                  |      0|none  |     0|acc   |↑  |0.5000|±  |0.0928|
+|  - Diagnostics and Laboratory Medicine|      0|none  |     0|acc   |↑  |0.4333|±  |0.0920|
+|  - Pharmacy                           |      0|none  |     0|acc   |↑  |0.4000|±  |0.0910|
+|  - Public Health                      |      0|none  |     0|acc   |↑  |0.5333|±  |0.0926|
+| - Humanities and Social Science       |      0|none  |      |acc   |↑  |0.6333|±  |0.0438|
+|  - History                            |      0|none  |     0|acc   |↑  |0.6000|±  |0.0910|
+|  - Literature                         |      0|none  |     0|acc   |↑  |0.8000|±  |0.0743|
+|  - Psychology                         |      0|none  |     0|acc   |↑  |0.5333|±  |0.0926|
+|  - Sociology                          |      0|none  |     0|acc   |↑  |0.6000|±  |0.0910|
+| - Science                             |      0|none  |      |acc   |↑  |0.3467|±  |0.0388|
+|  - Biology                            |      0|none  |     0|acc   |↑  |0.3000|±  |0.0851|
+|  - Chemistry                          |      0|none  |     0|acc   |↑  |0.2333|±  |0.0785|
+|  - Geography                          |      0|none  |     0|acc   |↑  |0.4667|±  |0.0926|
+|  - Math                               |      0|none  |     0|acc   |↑  |0.4333|±  |0.0920|
+|  - Physics                            |      0|none  |     0|acc   |↑  |0.3000|±  |0.0851|
+| - Tech and Engineering                |      0|none  |      |acc   |↑  |0.3381|±  |0.0316|
+|  - Agriculture                        |      0|none  |     0|acc   |↑  |0.5000|±  |0.0928|
+|  - Architecture and Engineering       |      0|none  |     0|acc   |↑  |0.1000|±  |0.0557|
+|  - Computer Science                   |      0|none  |     0|acc   |↑  |0.4333|±  |0.0920|
+|  - Electronics                        |      0|none  |     0|acc   |↑  |0.3000|±  |0.0851|
+|  - Energy and Power                   |      0|none  |     0|acc   |↑  |0.5333|±  |0.0926|
+|  - Materials                          |      0|none  |     0|acc   |↑  |0.2333|±  |0.0785|
+|  - Mechanical Engineering             |      0|none  |     0|acc   |↑  |0.2667|±  |0.0821|

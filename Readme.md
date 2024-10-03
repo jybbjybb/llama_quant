@@ -1,6 +1,6 @@
 Plot the results for quantization of LLM models
 
-LLaMA3.2-90B-Vision-Instruct
+LLaMA3.2-90B-Vision-Instruct, FP16
 ```
 CUDA_VISIBLE_DEVICES=4,5,6,7 python -m lm_eval --model hf-multimodal --model_args pretrained=/mnt/LLM_checkpoints/Llama-3.2-90B-Vision-Instruct/,parallelize=True --tasks mmmu_val  --batch_size 1 --apply_chat_template
 ```

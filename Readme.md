@@ -2,7 +2,7 @@ Check Plot_LM_Q_results.ipynb for all detailed results for LLaMA, Qwen, Mistral,
 
 All open models are downloaded from HuggingFace repository in the following table
 
-| Model Name                       | Hugging Face URL                                                     |
+| Model Name                       | HuggingFace URL                                                     |
 |----------------------------------|---------------------------------------------------------------------|
 | LLaMA3-70B                      | [meta-llama/Meta-Llama-3-70B](https://huggingface.co/meta-llama/Meta-Llama-3-70B)       |
 | LLaMA3-70B-Instruct             | [meta-llama/Meta-Llama-3-70B-Instruct](https://huggingface.co/meta-llama/Meta-Llama-3-70B-Instruct) |

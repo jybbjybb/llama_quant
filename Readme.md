@@ -35,15 +35,52 @@ All open models are downloaded from HuggingFace repository in the following tabl
 
 
 
-In order to reproduce the results in Plot_LM_Q_results.ipynb, first add arguments in lm-evaluation-harness
+In order to reproduce the results in Plot_LM_Q_results.ipynb:
+In lm_eval/__main__.py, first add arguments in lm-evaluation-harness
 ```
-parser.add_argument('--in_place_w', action="store_true", default=False, help='Quantize then change the weight (use with caution)')
 parser.add_argument('--x_nbit', default=-1, type=int, help='Number of bits for activation')
 parser.add_argument('--w_nbit', default=-1, type=int, help='Number of bits for weights')
 parser.add_argument('--out_nbit', default=-1, type=int, help='Number of bits for output activation')
 parser.add_argument('--q_group_size', default=-1, type=int, help='Quant group size')
+parser.add_argument('--in_place_w', action="store_true", default=False, help='Quantize then change the weight (use with caution)')
 parser.add_argument('--T', default=-1.0, type=float, help='some threshold for bi-smoothing')
+parser.add_argument('--file_scaleW', default=None, type=str, help='For bi-smooth, save or load this file as scaleW')
+parser.add_argument('--train_scaleW', action="store_true", default=False, help='Whether to train scaleW or use predefined method to calculate scaleW')
+parser.add_argument('--loss_thr', default=1e6, type=float, help='loss threshold for learning scaleW')
 ```
+Then, add
+```
+args=args,
+```
+as the last arguments 
+```
+results = evaluator.simple_evaluate(...)
+```
+Then in lm_eval/evaluator.py, add 
+```
+args=None,
+```
+in the last argments in
+```
+def simple_evaluate(...)
+```
+Then, add
+```
+from llama_quant.my_utils import QLinear, replace_all_linear_layers_recursive, replace_selective_linear_layers_recursive
+if args.x_nbit > 0 or args.w_nbit > 0 or args.out_nbit > 0:  
+    replace_all_linear_layers_recursive(lm.model.model, prefix='lm.model.model', args=args)
+```
+before 
+```
+results = evaluate(
+        lm=lm,
+        ... )
+```
+Then run
+```
+CUDA_VISIBLE_DEVICES=0 python -m lm_eval --model hf --model_args pretrained=<model_ckpt>,parallelize=True --task winogrande  --batch_size 8 --x_nbit 8 --w_nbit 8 --q_group_size -1 --T -1 --in_place_w
+```
+
 ### To reproduce the results of bi-smoothing
 
 Add one line of code in evaluation.py, before "results = evaluate( ... )"

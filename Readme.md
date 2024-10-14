@@ -1,6 +1,6 @@
 Check Plot_LM_Q_results.ipynb for all detailed results for LLaMA, Qwen, Mistral, Mixtral, and other models with W16A16, W8A16, and W8A8 per-channel quantization.
 
-[![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/YOUTUBE_VIDEO_ID_HERE/0.jpg)](https://www.youtube.com/watch?v=x4YgRd8fmCU)
+[![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/x4YgRd8fmCU/0.jpg)](https://www.youtube.com/watch?v=x4YgRd8fmCU)
 
 
 All open models are downloaded from HuggingFace repository in the following table

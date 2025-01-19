@@ -81,7 +81,7 @@ Then run
 CUDA_VISIBLE_DEVICES=0 python -m lm_eval --model hf --model_args pretrained=<model_ckpt>,parallelize=True --task winogrande  --batch_size 8 --x_nbit 8 --w_nbit 8 --q_group_size -1 --T -1 --in_place_w
 ```
 
-### To reproduce the results of bi-smoothing
+### To reproduce the results of SmoothQuant
 
 Add one line of code in evaluation.py, before "results = evaluate( ... )"
 ```
